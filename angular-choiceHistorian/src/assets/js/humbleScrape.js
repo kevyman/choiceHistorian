@@ -104,7 +104,7 @@ function getReleaseDate(month, year) {
 
 
 
-    release = d.valueOf() / 1000;
+    release = d.valueOf();
 
     return release;
 };

@@ -12,9 +12,12 @@ import java.util.List;
 
 
 @RestController
-@AllArgsConstructor
 public class GameController {
     private GameService gameService;
+
+    public GameController(GameService gameService) {
+        this.gameService = gameService;
+    }
 
     @GetMapping("/allGames")
     public ResponseEntity<List<Game>> getAllGames() {

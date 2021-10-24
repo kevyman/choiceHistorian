@@ -1,18 +1,11 @@
 <app-navbar></app-navbar>
 
+<!-- <button type="button" class="btn btn-danger" (click)="clickAllButtons()">Click all the buttons!</button>
 <ul>
   <li *ngFor="let month of monthList">
     <h2>{{month.month}} - {{month.release*1000 | date}}</h2>
-    <ol>
-      <li *ngFor="let game of month.games">
-        <h4>{{game.name}}</h4>
-        <ul>
-          <li *ngFor="let item of game | keyvalue">{{item.key}} : {{item.value}}</li>
-          
-        </ul>
-      </li>
-    </ol>
+    <button class="btn btn-success" (click)="addAllGames(month)">Add all games!</button>
   </li>
-</ul>
+</ul> -->
 
 <app-footer></app-footer>

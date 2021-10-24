@@ -14,12 +14,12 @@ export interface Game{
     steamDBScore: number;
     gameReleaseDate : Date;
     gameAgeAtBundleRelease: string;
-    gameAgeTimestamp: number;
+    gameAgeInSeconds: number;
     lowestPrice: number;
     largestCut: number;
     fullPrice: number;
     timesBundled: number;
-    ITADLink: string;
+    itadlink: string;
     metacriticScore: number;
     metacriticLink: string;
     howLongToBeat: number;
