@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import data from '../assets/humbleDatabase2.json';
+import { Component, OnInit } from '@angular/core';
+// import data from '../assets/humbleDatabase2.json';
 import { Game } from "../app/models/game";
 import { GameService } from './services/game.service';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -9,12 +9,70 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'choiceHistorian';
-  monthList: any = data;
+  // monthList: any = data;
+
+  public gameList!: Game[];
+  public monthList = [{month: "string", games: this.gameList}];
 
   constructor(private gameService: GameService) { }
 
+  ngOnInit(): void {
+    this.getGames();
+    this.getMonths();
+  }
+
+  getGames() {
+    this.gameService.getAllGames().subscribe(
+      (response: Game[]) => {
+        this.gameList = response;
+       // console.log(this.gameList);
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+  getMonths() {
+    for(let year = 2015; year<2021; year++){
+      if(year==2015){
+        for(let j = 10; j<12; j++){
+          let tempDate = new Date(year,j);
+          const month = tempDate.toLocaleString('en-US', { month: 'long' }).toUpperCase();
+          
+          this.gameService.getMonth(month, year).subscribe(
+            (response: Game[]) => {
+              // console.log({month: `${month} ${year}`, games: response});
+              this.monthList.push({month: `${month} ${year}`, games: response});
+              
+            },
+            (error: HttpErrorResponse) => {
+              alert(error.message);
+            }
+          );
+        }
+      }else{
+        for(let k = 0; k<12; k++){
+          let tempDate = new Date(year,k);
+          const month = tempDate.toLocaleString('en-US', { month: 'long' }).toUpperCase();
+          
+          this.gameService.getMonth(month, year).subscribe(
+            (response: Game[]) => {
+              // console.log({month: `${month} ${year}`, games: response});
+              this.monthList.push({month: `${month} ${year}`, games: response});
+              
+            },
+            (error: HttpErrorResponse) => {
+              alert(error.message);
+            }
+          );
+        }
+      }
+      
+    }
+  }
 
   // public addAllGames(month: any) {
 
