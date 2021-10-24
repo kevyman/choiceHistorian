@@ -1,3 +1,8 @@
 .filter-white{
     filter: brightness(0) saturate(100%) invert(98%) sepia(0%) saturate(0%) hue-rotate(9deg) brightness(102%) contrast(105%);
 }
+
+.navbar-brand{
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+}
