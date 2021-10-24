@@ -32,7 +32,7 @@ public class Game {
 
     private Double steamID;
 
-    private String steamHeaderLink;
+    private String steamHeaderUrl;
 
     private Boolean steamCards;
 
@@ -43,7 +43,7 @@ public class Game {
 
     private Double steamNegativeVotes;
 
-    private Integer steamDBScore;
+    private Double steamDBScore;
 
 
     private LocalDateTime gameReleaseDate;
@@ -64,7 +64,7 @@ public class Game {
     private String ITADLink;
 
 
-    private Integer metacriticScore;
+    private Double metacriticScore;
 
     private String metacriticLink;
 
