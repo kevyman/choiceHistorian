@@ -92,7 +92,8 @@
               "browserTarget": "choiceHistorian:build:production"
             },
             "development": {
-              "browserTarget": "choiceHistorian:build:development"
+              "browserTarget": "choiceHistorian:build:development",
+              "proxyConfig": "./proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

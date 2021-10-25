@@ -34,4 +34,8 @@ export class GameService {
   public deleteGame(id: number): Observable<void>{
     return this.http.delete<void>(`${this.apiServerUrl}/deleteGame/${id}`)
   }
+  
+  public getSteamInfo(steamId: number): Observable<any>{
+    return this.http.get<any>(`http://localhost:4200/steam?cc=US&appids=${steamId}`);
+  }
 }

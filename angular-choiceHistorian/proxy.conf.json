@@ -1,0 +1,10 @@
+{
+    "/steam": {
+      "target": "https://store.steampowered.com/api/appdetails",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/steam": ""
+      }
+    }
+  }

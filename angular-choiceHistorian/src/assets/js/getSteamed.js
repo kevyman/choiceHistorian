@@ -66,11 +66,11 @@ async function getSteamed(gameName){
 
 // For testing:
 
-// (async ()=>{
-//     let thisID = await getSteamed("RÖKI");
-//     console.log(thisID);
+(async ()=>{
+    let thisID = await getSteamed("Ring of Pain");
+    console.log(thisID);
 
-// })();
+})();
 
 
 module.exports = getSteamed;

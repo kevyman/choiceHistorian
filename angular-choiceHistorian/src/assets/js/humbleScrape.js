@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 
 /*Test function*/
-let date = new Date(2021,9);
+let date = new Date();
 
 (async () => {
     const hopeThisWorks = await humbleScrape(date);

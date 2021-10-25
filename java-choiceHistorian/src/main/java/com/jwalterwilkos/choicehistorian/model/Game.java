@@ -90,4 +90,7 @@ public class Game {
     @Column(nullable = true, length = 100)
     private Double howLongToBeat;
 
+//    @Column(nullable = true, length = 100)
+//    private String firstSteamVid;
+
 }

@@ -1,5 +1,6 @@
 export interface Game{
 
+    id?: number;
     name: string;
     month: string;
     year: number;
@@ -23,4 +24,5 @@ export interface Game{
     metacriticScore: number;
     metacriticLink: string;
     howLongToBeat: number;
+    //firstSteamVid: string;
 }
